@@ -17,22 +17,14 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-	if (typeof percent === 'string') {
 		percent = parseInt(percent);
-	}
-	if (typeof contribution === 'string') {
 		contribution = parseInt(contribution);
-	}
-	if (typeof amount === 'string') {
 		amount = parseInt(amount);
-	}
-	if (typeof countMonths === 'string') {
 		countMonths = parseInt(countMonths);
-	}
 	if (isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths)) {
 		return false;
 	}
-	percent = percent / 100;
+	percent /= 100;
 	let bodyCredit = amount - contribution;
 	let monthPercent = percent / 12;
 	let monthlyPayment = bodyCredit * (monthPercent + monthPercent / (Math.pow(1 + monthPercent, countMonths) - 1));
