@@ -26,7 +26,7 @@ function debounceDecoratorNew(func, delay) {
   wrapper.allCount = 0;
 
   function wrapper(...args) {
-    if (timeoutId === null) {
+    if (timeoutId) {
       func(args);
       wrapper.count++;
     }
